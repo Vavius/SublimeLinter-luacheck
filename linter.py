@@ -22,12 +22,12 @@ class Luacheck(Linter):
         '--ignore:,': ['channel'],
         '--only:,': [],
         '--limit=': None,
-        '--globals:,': [],
+        '--globals:,': []
     }
     comment_re = r'\s*--'
     inline_settings = 'limit'
     inline_overrides = ('ignore', 'only', 'globals')
-    cmd = 'luacheck @ *'
+    cmd = 'luacheck -a -s @ *'
     regex = r'^(?P<filename>.+):(?P<line>\d+):(?P<col>\d+): (?P<message>.*)$'
 
     def build_args(self, settings):
